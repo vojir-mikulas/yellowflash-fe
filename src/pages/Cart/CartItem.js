@@ -27,7 +27,7 @@ const CartItem = (props) => {
         <div className={"cartItem"}>
             <div className={"cartItem--container"}>
                 <img className={"cartItem__img"}
-                     src={`http://localhost:3000/${props.item.image ? props.item.image : "xd"}`} alt={"preview"}/>
+                     src={`${process.env.REACT_APP_SERVER_URL}/${props.item.image ? props.item.image : "xd"}`} alt={"preview"}/>
 
                 <div>
                     <h2><Link to={`/${props.item.id}`}>{props.item.name}</Link></h2>

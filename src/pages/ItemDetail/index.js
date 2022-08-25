@@ -59,7 +59,7 @@ const ItemDetail = () => {
             <div className={"itemDetail"}>
                 {item.images.length !== 0 ? item.images.map((image) => {
                     return (
-                        <img className="itemDetail__image" key={image.url} src={`http://localhost:3000/${image.url}`}
+                        <img className="itemDetail__image" key={image.url} src={`${process.env.REACT_APP_SERVER_URL}/${image.url}`}
                              alt={image.url}/>)
                 }) : ""}
                 <div className="itemDetail__description">

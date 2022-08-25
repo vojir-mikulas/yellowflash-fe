@@ -57,7 +57,7 @@ const CheckoutForm = () => {
                 <PaymentElement/>
                 {/* Show error message to your customers */}
                 {errorMessage && <div>{errorMessage}</div>}
-                <button>submit</button>
+
             </form>
             <CartDashboard options={{
                 text: "Zaplatit",

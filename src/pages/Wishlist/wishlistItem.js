@@ -24,7 +24,7 @@ const WishlistItem = (props) => {
 
             <div className="item-card">
                 {/*todo:nehardcodovat url */}
-                <img src={`http://localhost:3000/${props.item.images[0] ? props.item.images[0].url : "xd"}`}
+                <img src={`${process.env.REACT_APP_SERVER_URL}/${props.item.images[0] ? props.item.images[0].url : "xd"}`}
                      alt={props.item.images[0] ? props.item.images[0].url : "xd"}/>
                 <div className="info">
                     <span> <h3> {props.item.name}</h3></span>
