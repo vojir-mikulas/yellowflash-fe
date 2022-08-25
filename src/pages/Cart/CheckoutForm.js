@@ -35,7 +35,7 @@ const CheckoutForm = () => {
             //`Elements` instance that was used to create the Payment Element
             elements,
             confirmParams: {
-                return_url: `http://localhost:3001/cart/checkout/status`,
+                return_url: `${process.env.REACT_APP_SERVER_URL}/cart/checkout/status`,
             },
         });
         if (error) {
