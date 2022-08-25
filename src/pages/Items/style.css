@@ -1,0 +1,67 @@
+/*ITEMS PAGE*/
+.item--grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5vh;
+}
+
+.filter--wrapper {
+  margin: 45px auto;
+  width: 95%;
+  height: 65px;
+  background-color: #FFC804;
+}
+
+.filter__menu__items {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  height: inherit;
+}
+.filter__menu__items h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.filter__menu {
+  position: absolute;
+  z-index: 20;
+  margin-top: 30px;
+  display: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  background: #F9F9F9;
+  mix-blend-mode: normal;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  padding: 12px;
+}
+.filter__menu .filter__checkbox-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2vh;
+}
+
+.filter__menu--visible {
+  display: block !important;
+}
+
+.filter__button {
+  position: relative;
+  font-family: Roboto, serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: black;
+  border: 2px black solid;
+  padding: 7px 15px;
+}
+
+.filter__button--checked {
+  color: #FFC804 !important;
+  background-color: black !important;
+}
+
+/*# sourceMappingURL=style.css.map */

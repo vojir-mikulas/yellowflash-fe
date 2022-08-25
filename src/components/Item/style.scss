@@ -1,0 +1,24 @@
+.item-card{
+
+  width: 330px;
+
+  img{
+    width: 330px;
+    height: 500px;
+    object-fit: cover;
+  }
+  .info{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    span:nth-child(1){
+      flex: 80%;
+    }
+    .like{
+      display:flex;
+      justify-content: flex-end;
+    }
+  }
+
+}

@@ -1,0 +1,23 @@
+.item-card {
+  width: 330px;
+}
+.item-card img {
+  width: 330px;
+  height: 500px;
+  object-fit: cover;
+}
+.item-card .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.item-card .info span:nth-child(1) {
+  flex: 80%;
+}
+.item-card .info .like {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*# sourceMappingURL=style.css.map */
