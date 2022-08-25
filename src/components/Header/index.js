@@ -3,24 +3,33 @@ import {Link, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 import './style.css'
 import CartPreview from "./cartPreview";
+import SideMenu from "./sideMenu";
 
 const Header = () => {
     const cartItemsCount = useSelector((state) => state.cart.totalQuantity)
     const wishlistItemsCount = useSelector((state) => state.wishlist.totalQuantity)
-    const [sideMenuVisibility, setSideMenuVisibility] = useState(false)
+    const [menuVisibility, setMenuVisibility] = useState(false)
     const navigate = useNavigate()
     const [cartPreviewVisibility, setCartPreviewVisibility] = useState(false)
 
-    const handleMenu = () => {
+    const [sex,setSex] = useState("")
 
+    const handleMenu = () => {
+        setMenuVisibility(!menuVisibility)
     }
     return (
         <div>
             <header>
                 <div className="wrapper header-flex">
                     <nav>
-                        <Link to={"men/tshirt"}>Pánské </Link>
-                        <Link to={"women/tshirt"}>Dámské</Link>
+                         <span style={{cursor:"pointer"}} onClick={(e)=>{
+                             handleMenu()
+                             setSex("men")
+                         }}>Pánské</span>
+                        <span style={{cursor:"pointer"}} onClick={(e)=>{
+                            handleMenu()
+                            setSex("women")
+                        }}> Dámské</span>
                     </nav>
                     <h1 style={{cursor: "pointer"}} onClick={() => {
                         navigate("/", {replace: true})
@@ -39,13 +48,10 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            <div className={"side-menu"} style={{display: sideMenuVisibility ? "block" : "none"}}>
-                <ul>
-                    <li>pog</li>
-                    <li>pog</li>
-                    <li>pog</li>
-                </ul>
-            </div>
+            {menuVisibility && <SideMenu config={{
+                sex:sex,
+                setVisibility:setMenuVisibility
+            }}/>}
         </div>
     );
 };
