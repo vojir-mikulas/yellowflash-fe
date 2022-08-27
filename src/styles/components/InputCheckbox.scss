@@ -30,7 +30,7 @@
     transition: 0.1s;
   }
   input:checked:after{
-   display:block;
+    display:block;
 
   }
   input:after{
@@ -38,5 +38,22 @@
     display:none;
     height:16px;
     width: 16px;
+  }
+}
+
+.shipping-checkbox{
+  img{
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .shipping-checkbox--wrapper {
+    display:flex;
+    gap: 1rem;
+    align-items: center;
   }
 }

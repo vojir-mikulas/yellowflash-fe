@@ -24,7 +24,9 @@ const DiscountCode = (props) => {
                 setTimeout(()=>{
                 props.setVisibility(false)
                 },1500)
+
                 return setDiscount(response.data.id,response.data.discountAmount)
+
             }
             setIsValid(false)
             return setDiscount("",0)
@@ -33,14 +35,18 @@ const DiscountCode = (props) => {
         })
     }
     return (
-        <div ref={node} style={{position:"absolute"}}>
-            <input type="text" onInput={(e) => {
-                setInputValue(e.currentTarget.value)
-            }}/>
-            <button onClick={validate}>Použít</button>
-            {isValid && <div>Kód je platný</div>}
-            {!isValid && <div>Kód je neplatný</div>}
-        </div>
+       <div className={"dicount-modal__bg"}>
+           <div ref={node} className={"discount-modal"}>
+               <h1>Zadejte slevu</h1>
+               <input type="text" onInput={(e) => {
+                   setInputValue(e.currentTarget.value)
+               }}/>
+               {isValid && <div>Kód je platný</div>}
+               {!isValid && <div>Kód je neplatný</div>}
+               <button onClick={validate}>Použít</button>
+
+           </div>
+       </div>
     );
 };
 

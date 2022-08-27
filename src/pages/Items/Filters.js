@@ -24,7 +24,7 @@ const Filters = (props) => {
 
     return (
         <div className={"filter--wrapper"}>
-            <div className={"wrapper filter__menu__items"}>
+            <div className={"filter__menu--wrapper filter__menu__items"}>
                 <h2>{props.category}</h2>
                 <div ref={colorsNode}>
                     <FilterButton onClickEvent={()=>{setColorVisibility(!colorVisibility)}} setColorVisibility={setColorVisibility} visible={colorVisibility} text={"Barva"}/>

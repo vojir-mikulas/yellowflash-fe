@@ -1,0 +1,13 @@
+@import "variables";
+
+@import "global";
+
+/*  COMPONENTS  */
+@import 'components/Header';
+@import 'components/Item';
+@import "components/InputCheckbox";
+
+/*  PAGES  */
+@import "pages/Items";
+@import "pages/ItemDetail";
+@import "pages/Cart";

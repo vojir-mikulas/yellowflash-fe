@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
-import './style.css'
 import {useDispatch, useSelector} from "react-redux";
 import {wishlistActions} from "../../redux/wishlist-slice";
 import useWishlistCheck from "../../hooks/WishlistCheck";
@@ -18,11 +17,11 @@ const Item = (props) => {
     const isInWishlist = useWishlistCheck(props.item.id)
 
     return (
-        <div style={{cursor: "pointer"}} onClick={() => {
-            navigate("../" + props.item.id)
-        }}>
 
-            <div className="item-card">
+
+            <div className="item-card"  style={{cursor: "pointer"}} onClick={() => {
+                navigate("../" + props.item.id)
+            }}>
                 {/*todo:nehardcodovat url */}
                 <img src={`${process.env.REACT_APP_SERVER_URL}/${props.item.images[0] ? props.item.images[0].url : "xd"}`}
                      alt={props.item.images[0] ? props.item.images[0].url : "xd"}/>
@@ -37,7 +36,7 @@ const Item = (props) => {
 
                 </div>
             </div>
-        </div>
+
     );
 };
 

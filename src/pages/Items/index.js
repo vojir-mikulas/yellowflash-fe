@@ -5,7 +5,6 @@ import SizesMenu from "./SizesMenu";
 import PriceRangeMenu from "./PriceRangeMenu";
 import axios from "axios";
 import Item from "../../components/Item/index";
-import './style.css'
 import Filters from "./Filters";
 
 const Items = () => {
@@ -43,6 +42,7 @@ const Items = () => {
             console.error("Error fetching data: ", error)
         })
         axios.get(`${process.env.REACT_APP_SERVER_URL}/item?${requestString}`).then(response => {
+           
             setItems(response.data)
 
         }).catch(error => {

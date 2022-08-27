@@ -7,7 +7,7 @@ import Cart from "./pages/Cart";
 import {Provider, useDispatch, useSelector} from "react-redux";
 import {store, persistor} from "./redux/store";
 import {PersistGate} from 'redux-persist/integration/react'
-import './Global.css'
+
 import Header from "./components/Header";
 import InputCheckbox from "./components/InputCheckbox";
 import PaymentStatus from "./pages/PaymentStatus/index";
@@ -50,29 +50,30 @@ function App() {
     }, [cartItems])
     return (
         <Router className="App">
-
             <Header/>
 
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/:sex/:category" element={<Items/>}/>
-                <Route path="/:id" element={<ItemDetail/>}/>
-                <Route path="/cart" element={<Cart/>}>
-                    <Route index element={<CartPage/>}/>
-                    <Route path="userdata" element={<UserDataPage/>}/>
-                    <Route path="shipping" element={<ShippingPage/>}/>
-                    <Route path="checkout" element={<CheckoutPage/>}>
-                        <Route path="payment" element={<CheckoutForm/>
-                        }/>
-                        <Route path="status" element={<CheckoutStatus/>}/>
-                    </Route>
-                </Route>
-                <Route path="/wishlist" element={<WishlistPage/>}/>
-                <Route path="/order/:id" element={<OrderPage/>}/>
-                <Route path="/success" element={<PaymentStatus/>}/>
-                <Route path="/error" element={<ErrorPage/>}/>
-                <Route path="*" element={<ErrorPage/>}/>
-            </Routes>
+          <div className="routes">
+              <Routes>
+                  <Route path="/" element={<Home/>}/>
+                  <Route path="/:sex/:category" element={<Items/>}/>
+                  <Route path="/:id" element={<ItemDetail/>}/>
+                  <Route path="/cart" element={<Cart/>}>
+                      <Route index element={<CartPage/>}/>
+                      <Route path="userdata" element={<UserDataPage/>}/>
+                      <Route path="shipping" element={<ShippingPage/>}/>
+                      <Route path="checkout" element={<CheckoutPage/>}>
+                          <Route path="payment" element={<CheckoutForm/>
+                          }/>
+                          <Route path="status" element={<CheckoutStatus/>}/>
+                      </Route>
+                  </Route>
+                  <Route path="/wishlist" element={<WishlistPage/>}/>
+                  <Route path="/order/:id" element={<OrderPage/>}/>
+                  <Route path="/success" element={<PaymentStatus/>}/>
+                  <Route path="/error" element={<ErrorPage/>}/>
+                  <Route path="*" element={<ErrorPage/>}/>
+              </Routes>
+          </div>
 
 
         </Router>

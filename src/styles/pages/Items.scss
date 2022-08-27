@@ -1,0 +1,105 @@
+.item--grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+ }
+
+.filter--wrapper {
+  width: 85%;
+  margin: 30px auto;
+  background-color: $yellow;
+  padding: 10px 0;
+
+  .filter__menu--wrapper {
+    width: 94%;
+    margin: auto;
+
+  }
+
+  .filter__menu__items {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .filter__menu__items::-webkit-scrollbar {
+    display: none;
+  }
+  .filter__button {
+     border: 3px solid black  ;
+    padding: 5px 20px;
+
+  }
+
+  .filter__button--checked {
+    background-color: black;
+    color: $yellow
+  }
+
+  .filter__menu{
+    display:none;
+    position: absolute;
+
+    margin-top: 1rem;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    background-color: $light;
+    padding: 20px 30px;
+    .filter__menu__price-range{
+      display:flex;
+      gap: 1rem;
+      input{
+        width: 10rem;
+        text-align: center;
+
+        border-radius: 4px;
+      }
+    }
+    .filter__checkbox-container{
+    display:grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 1rem;
+
+    }
+  }
+  .filter__menu--visible{
+    display:block;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+
+  .item--grid {
+    grid-template-columns: repeat(3,1fr);
+  }
+
+}
+@media only screen and (max-width: 1200px) {
+
+  .item--grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+
+  .filter__menu{
+    transform-origin: center;
+    top: 25vh;
+    right: 20%;
+
+  }
+
+  .item--grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

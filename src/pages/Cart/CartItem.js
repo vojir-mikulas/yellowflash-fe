@@ -36,7 +36,7 @@ const CartItem = (props) => {
                         <div><h3>Velikost</h3> <span>{props.item.size}</span></div>
                         <div><h3>Barva</h3> <span>{props.item.color}</span></div>
                         <div><h3>Množství</h3>
-                            <span>
+                            <span className={"cartItem__details__buttons"}>
                                 <button onClick={() => {
                                     handleDecrementQuantity(props.item.id, props.item.size)
                                 }}>⬇️

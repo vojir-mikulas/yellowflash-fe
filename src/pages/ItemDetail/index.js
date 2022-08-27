@@ -3,7 +3,6 @@ import axios from "axios";
 import {useNavigate, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {cartActions} from "../../redux/cart-slice";
-import './style.css'
 import {wishlistActions} from "../../redux/wishlist-slice";
 import useWishlistCheck from "../../hooks/WishlistCheck";
 import SizeHelper from "./sizeHelper";
@@ -65,7 +64,7 @@ const ItemDetail = () => {
                 <div className="itemDetail__description">
                     <div className={"itemDetail__description--container"}>
                         <h2>{item.name}</h2>
-                        <span className={"itemDetail__description__price"}>{`CZK${item.price}`}</span>
+                        <span className={"itemDetail__description__price"}>{`${item.price} Kč`}</span>
                         <div className={"itemDetail__description__detail"}>
                             <h3>Detaily produktu</h3>
                             <p> {item.details}</p>

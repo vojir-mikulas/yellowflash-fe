@@ -36,12 +36,12 @@ const CartPage = () => {
 
     if (loading) return (<h1>loading...</h1>)
     return (
-        <>
-            <span> YELLOWFLASH.COM / NAKUPNÍ KOŠÍK</span>
+        <div className={"cart-page"}>
+            <span style={{textAlign:"center"}}> YELLOWFLASH.COM <span className="slash">/</span> NAKUPNÍ KOŠÍK</span>
             <h1>NÁKUPNÍ KOŠÍK</h1>
 
-            <div>
-                <div>
+            <div className={"cart-page__container"}>
+                <div className={"cart-page__items"}>
                     {cartItems.map((cartItem) => {
                         let itemData = items.find(item => item.id === cartItem.id)
                         return (
@@ -66,7 +66,7 @@ const CartPage = () => {
                     disabled: false
                 }}/>
             </div>
-        </>
+        </div>
     );
 };
 

@@ -25,10 +25,10 @@ const CartPreview = () => {
 
     if (loading) return (<h1 style={{position:"absolute",}}>loading...</h1>)
     return (
-        <div style={{position:"absolute",}}>
+        <div className={"cart-preview modal"} >
          <div>
              <h2>Váš košík</h2>
-             <div>
+             <div className="cart-preview__item-container">
                  {
                      cartItems.map((cartItem)=>{
                          let itemData = items.find(item => item.id === cartItem.id)
@@ -45,10 +45,10 @@ const CartPreview = () => {
                      })
                  }
              </div>
-             <h2>Celkem: {price}</h2>
+             <h2 className={"cart-preview__price"}>Celkem: {price} Kč</h2>
          </div>
             <button onClick={()=>
-            navigate('/cart',{replace:true})}>Do košíku</button>
+            navigate('/cart',{replace:true})}>Do Košíku</button>
         </div>
     );
 };

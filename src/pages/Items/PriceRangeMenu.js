@@ -25,11 +25,14 @@ const PriceRangeMenu = (props) => {
     },[])
     return (
         <div className={"filter__menu "+ (props.visible ? "filter__menu--visible" : "")}>
-            <h3>highestPrice</h3>
-            <input ref={highestPriceInput} onInput={handleHighestPriceChange} type="number" name="highestPrice" min={0}/>
 
-            <h3>lowestPrice</h3>
-            <input ref={lowestPriceInput} onInput={handleLowestPriceChange} type="number" name="lowestPrice" min={0}/>
+           <div className="filter__menu__price-range">
+
+               <input placeholder="0 Kč" ref={lowestPriceInput} onInput={handleLowestPriceChange} type="number" name="lowestPrice" min={0}/>
+               <h3>-</h3>
+               <input placeholder="5000 Kč"  ref={highestPriceInput} onInput={handleHighestPriceChange} type="number" name="highestPrice" min={0}/>
+
+           </div>
         </div>
     );
 };

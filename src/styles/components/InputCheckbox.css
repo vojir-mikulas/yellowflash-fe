@@ -39,4 +39,14 @@
   width: 16px;
 }
 
-/*# sourceMappingURL=style.css.map */
+.shipping-checkbox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.shipping-checkbox .shipping-checkbox--wrapper {
+  display: flex;
+}
+
+/*# sourceMappingURL=InputCheckbox.css.map */

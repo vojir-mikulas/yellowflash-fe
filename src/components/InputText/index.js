@@ -24,11 +24,11 @@ const InputText = (props) => {
     },[])
     return (
     <div>
-        <input type="text" value={inputValue} placeholder={props.options.placeholder} onInput={(e)=>{
+        <input  className={props.options.error && "input--error"} type="text" value={inputValue} placeholder={props.options.placeholder} onInput={(e)=>{
             setInputValue(e.currentTarget.value)
             props.options.setParentValue(e.currentTarget.value)
         }}  name={props.options.name} id={props.options.name}/>
-        {props.options.error && <span>ERROOOR AAA PANIKA</span>}
+
     </div>
     );
 };

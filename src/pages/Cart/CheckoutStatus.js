@@ -29,27 +29,27 @@ const CheckoutStatus = () => {
 
                 switch (paymentIntent.status) {
                     case 'succeeded':
-                        setMessage('Success! Payment received.');
+                        setMessage('Platba byla přijata!');
                         break;
 
                     case 'processing':
-                        setMessage("Payment processing. We'll update you when payment is received.");
+                        setMessage("Platba se zpracovává, dáme vědět až bude přijata.");
                         break;
 
                     case 'requires_payment_method':
                         // Redirect your user back to your payment page to attempt collecting
                         // payment again
-                        setMessage('Payment failed. Please try another payment method.');
+                        setMessage('Platba se nezdařila, zkuste prosím jinou metodu platby.');
                         break;
 
                     default:
-                        setMessage('Something went wrong.');
+                        setMessage('Něco šlo špatně xd');
                         break;
                 }
             });
         setTimeout(()=>{
             navigate(`../../../order/${paymentId}`)
-            console.log("XD!")
+
         }, 5000)
     }, [stripe]);
 

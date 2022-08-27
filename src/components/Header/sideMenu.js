@@ -5,9 +5,7 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom";
 
 const SideMenu = ({config}) => {
-    const node = useClickOutside(()=>{
-        config.setVisibility(false)
-    })
+const node = useClickOutside(()=>{config.setVisibility(false)})
     const [loading,setLoading] = useState(true)
     const [categories,setCategories] = useState("")
     useEffect(() => {
@@ -20,20 +18,43 @@ const SideMenu = ({config}) => {
         })
     }, [])
     const navigate = useNavigate()
-    if(loading) return
+    if (loading) return
     return (
-        <div ref={node} style={{position:"absolute",bottom:0,top:0,background:"white",width:"300px",display:"flex",justifyContent:"center",zIndex:43}}>
-            <ul>
-                {categories.map((category)=>{
-                return(
-                    <li style={{cursor:"pointer"}} onClick={()=>{
-                     navigate(`./${config.sex}/${category.id}`,{replace:true});
-                     config.setVisibility(false)
-                    }}>{category.title}</li>
-                )
-                })}
-            </ul>
-        </div>
+      <div className={"side-menu__bg"}>
+          <div ref={node}  className={"side-menu"}>
+              {config.width <= 500 &&  <div>
+                  <button className={(config.sex === "men") && "button--checked"} onClick={(e)=>{
+                      config.setSex("men")
+
+                  }}>Pánské </button>
+                  <button className={(config.sex === "women") && "button--checked"} onClick={(e)=>{
+                      config.setSex("women")
+
+                  }}>Dámské </button></div>}
+              <ul>
+                  <li className={"side-menu__news"}>Novinky</li>
+
+                  {categories.map((category)=>{
+                      return(
+                          <li key={category.id} style={{cursor:"pointer"}} onClick={()=>{
+                              navigate(`./${config.sex}/${category.id}`,{replace:true});
+                              config.setVisibility(false)
+                          }}>{category.title}</li>
+                      )
+                  })}
+              </ul>
+              {config.width <= 500 && <ul>
+                  <li onClick={()=> {
+                      navigate("/wishlist")
+                      config.setVisibility(false)
+                  }}>Oblíbené({config.wishlistItemsCount})</li>
+                  <li onClick={()=> {
+                      navigate("/cart")
+                      config.setVisibility(false)
+                  }}>Košík({config.cartItemsCount})</li>
+              </ul>}
+          </div>
+      </div>
     );
 };
 
