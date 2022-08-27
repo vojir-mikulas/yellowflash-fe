@@ -427,8 +427,10 @@ input[type=number] {
 @media only screen and (max-width: 800px) {
   .filter__menu {
     transform-origin: center;
-    top: 25vh;
-    right: 20%;
+    width: 200px;
+    right: 0;
+    left: 0;
+    margin: 7% auto;
   }
   .item--grid {
     display: flex;
