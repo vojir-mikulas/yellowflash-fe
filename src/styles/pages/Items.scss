@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
- }
+}
 
 .filter--wrapper {
   width: 85%;
@@ -23,15 +23,17 @@
     align-items: center;
     gap: 1.5rem;
     overflow: scroll;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
+
   .filter__menu__items::-webkit-scrollbar {
     display: none;
   }
+
   .filter__button {
-     border: 2px solid black  ;
-    color:black;
+    border: 2px solid black;
+    color: black;
     font-weight: bold;
     padding: 5px 20px;
 
@@ -42,8 +44,8 @@
     color: $yellow
   }
 
-  .filter__menu{
-    display:none;
+  .filter__menu {
+    display: none;
     position: absolute;
 
     margin-top: 1rem;
@@ -52,52 +54,61 @@
     border-radius: 4px;
     background-color: $light;
     padding: 20px 30px;
-    .filter__menu__price-range{
-      display:flex;
+
+    .filter__menu__price-range {
+      display: flex;
       gap: 1rem;
-      input{
+      align-items: center;
+      justify-content: center;
+      input {
         width: 10rem;
         text-align: center;
 
         border-radius: 4px;
       }
     }
-    .filter__checkbox-container{
-    display:grid;
-      grid-template-columns: repeat(2,1fr);
+
+    .filter__checkbox-container {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
 
     }
   }
-  .filter__menu--visible{
-    display:block;
+
+  .filter__menu--visible {
+    display: block;
   }
 }
 
 @media only screen and (max-width: 1600px) {
 
   .item--grid {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
 }
+
 @media only screen and (max-width: 1200px) {
 
   .item--grid {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
 }
 
 @media only screen and (max-width: 800px) {
 
-  .filter__menu{
+  .filter__menu {
     transform-origin: center;
-    width: 200px;
-    right:0;
-    left:0;
+    width: 300px;
+    right: 0;
+    left: 0;
     margin: 7% auto;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .item--grid {

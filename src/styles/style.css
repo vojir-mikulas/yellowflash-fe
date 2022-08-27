@@ -399,6 +399,8 @@ input[type=number] {
 .filter--wrapper .filter__menu .filter__menu__price-range {
   display: flex;
   gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 .filter--wrapper .filter__menu .filter__menu__price-range input {
   width: 10rem;
@@ -427,10 +429,13 @@ input[type=number] {
 @media only screen and (max-width: 800px) {
   .filter__menu {
     transform-origin: center;
-    width: 200px;
+    width: 300px;
     right: 0;
     left: 0;
     margin: 7% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .item--grid {
     display: flex;
