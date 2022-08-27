@@ -19,10 +19,10 @@ const OrderPage = () => {
             setLoading(false);
         })
     },[])
-    if(loading) return <h2>loading...</h2>
+    if(loading)  
     return <div>
-        <h1>Děkujeme za objednávkuy</h1>
-        <span>Jstě fakt SUPRA ale bez A 💛</span>
+        <h1>Děkujeme za objednávku</h1>
+        <span> Detail objednávky byl zaslán emailem</span>
     </div>;
 
 };

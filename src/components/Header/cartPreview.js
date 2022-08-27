@@ -23,7 +23,7 @@ const CartPreview = () => {
         })
     }, [])
 
-    if (loading) return (<h1 style={{position:"absolute",}}>loading...</h1>)
+    if (loading) return
     return (
         <div className={"cart-preview modal"} >
          <div>

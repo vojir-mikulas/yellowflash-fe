@@ -1,30 +1,36 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {useDispatch} from "react-redux";
 import {cartActions} from "../../redux/cart-slice";
 import {Link, useNavigate} from "react-router-dom";
 import {wishlistActions} from "../../redux/wishlist-slice";
 import useWishlistCheck from "../../hooks/WishlistCheck";
+import cart from "../Cart";
 
 const WishlistItem = (props) => {
     const navigate = useNavigate()
-
+    const sizeSelect = useRef(null)
     const dispatch = useDispatch();
     const handleWishlist = (id) => {
         dispatch(wishlistActions.handleWishlist({
             id,
         }))
     }
-
+    const addToCart = (id, size) => {
+        dispatch(cartActions.addToCart({
+            id,
+            size,
+        }))
+    }
     const isInWishlist = useWishlistCheck(props.item.id)
 
     return (
-        <div style={{cursor: "pointer"}} onClick={() => {
-            navigate("../" + props.item.id)
-        }}>
+        <div  >
 
-            <div className="item-card">
+            <div className="item-card wishlist__item">
                 {/*todo:nehardcodovat url */}
-                <img src={`${process.env.REACT_APP_SERVER_URL}/${props.item.images[0] ? props.item.images[0].url : "xd"}`}
+                <img style={{cursor: "pointer"}} onClick={() => {
+                    navigate("../" + props.item.id)
+                }} src={`${process.env.REACT_APP_SERVER_URL}/${props.item.images[0] ? props.item.images[0].url : "xd"}`}
                      alt={props.item.images[0] ? props.item.images[0].url : "xd"}/>
                 <div className="info">
                     <span> <h3> {props.item.name}</h3></span>
@@ -34,11 +40,19 @@ const WishlistItem = (props) => {
                         handleWishlist(props.item.id)
                     }} className="like">  {isInWishlist ? <span>❤️</span> : <span>🖤</span>}  </button>
                     <span> {"CZK" + props.item.price}</span>
-                    <button onClick={()=>{
-                        handleWishlist(props.item.id)
 
-                    }}>Přidat do košíku</button>
                 </div>
+                <select ref={sizeSelect} name="" id="">
+                    {props.item.sizes.map((size)=>{
+                        return(
+                            <option value={size.size}>{size.size}</option>
+                        )
+                    })}
+                </select>
+                <button className={"cartButton"} onClick={()=>{
+                    handleWishlist(props.item.id)
+                    addToCart(props.item.id,sizeSelect.current.value)
+                }}>Přidat do košíku</button>
             </div>
         </div>
     );

@@ -377,7 +377,9 @@ input[type=number] {
   display: none;
 }
 .filter--wrapper .filter__button {
-  border: 3px solid black;
+  border: 2px solid black;
+  color: black;
+  font-weight: bold;
   padding: 5px 20px;
 }
 .filter--wrapper .filter__button--checked {
@@ -826,6 +828,52 @@ input[type=number] {
   }
   .dashboard {
     width: 100%;
+  }
+}
+.wishlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 10px;
+}
+.wishlist .wishlist__item-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.wishlist .wishlist__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.wishlist .wishlist__item select {
+  background-color: white;
+  border: 1px solid #ADADAD;
+  padding: 10px 10px;
+}
+.wishlist .wishlist__item .cartButton {
+  background-color: #FFC804;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+@media only screen and (max-width: 1600px) {
+  .wishlist__item-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .wishlist__item-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .wishlist__item-grid {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 

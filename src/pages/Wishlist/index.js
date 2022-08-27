@@ -12,6 +12,7 @@ const WishlistPage = () => {
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_SERVER_URL}/item/multipleById?ids=${wishlistItems.map(item => item.id).join(";")}`).then(response => {
+
             setItems(response.data)
         }).catch(error => {
             console.error("Error fetching data: ", error)
@@ -22,16 +23,18 @@ const WishlistPage = () => {
 
     if (loading) return (<h1>loading...</h1>)
     return (
-        <div>
-            <span> YELLOWFLASH.COM / SEZNAM PŘÁNÍ</span>
-            <h1>SEZNAM PŘÁNÍ</h1>
-            <div>
+        <div className="wrapper">
+            <div className={"wishlist"}>
+                <span> YELLOWFLASH.COM / SEZNAM PŘÁNÍ</span>
+                <h1>SEZNAM PŘÁNÍ</h1>
                 <div>
-                    {items.map((item)=>{
-                        return(
-                            <WishlistItem key={item.id} item={item}/>
-                        )
-                    })}
+                    <div className={"wishlist__item-grid"}>
+                        {items.map((item)=>{
+                            return(
+                                <WishlistItem key={item.id} item={item}/>
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
         </div>

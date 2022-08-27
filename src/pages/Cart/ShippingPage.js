@@ -36,8 +36,8 @@ const ShippingPage = () => {
     }, [shippingMethod])
     return (
         <div className={"cart-page"}>
-            <span style={{textAlign:"center"}}> YELLOWFLASH.COM <span className="slash">/</span> DORUČOVACÍ ÚDAJE</span>
-            <h1>DORUČOVACÍ ÚDAJE</h1>
+            <span style={{textAlign:"center"}}> YELLOWFLASH.COM <span className="slash">/</span> ZPŮSOB DORUČENÍ</span>
+            <h1>ZPŮSOB DORUČENÍ</h1>
             <div className="cart-page__container">
                 <form className={"cart-page__shipping"}>
                     <InputCheckboxShipping options={{
