@@ -32,7 +32,7 @@ const Home = () => {
 
             </div>
              <div className="wrapper">
-                 {!menItemsLoading && <div className="home__new-men">
+                 {<div className="home__new-men">
                      <h3>Pánské novinky</h3>
                      <div ref={menItemsNode}  className="home__item-grid">
                          {!menItemsLoading && menItems.map((item)=>{
