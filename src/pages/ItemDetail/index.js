@@ -27,6 +27,11 @@ const ItemDetail = () => {
             id,
             size,
         }))
+       setTimeout(()=>{
+           dispatch(cartActions.deleteFromCartQueue({
+               id,
+           }))
+       },2500)
     }
     const handleWishlist = (id) => {
         dispatch(wishlistActions.handleWishlist({
@@ -81,12 +86,12 @@ const ItemDetail = () => {
                             <span onClick={()=>{setSizehelperVisibility(true)}} className={"itemDetail__description__clickable"}>nápověda ohledně velikostí</span>
                         </div>
                        <div className={"itemDetail__description__buttons"}>
-                           <button className={"itemDetail__description__cartButton"} onClick={() => {
+                           <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}   transition={{ type: "spring", duration: 0.3  }} className={"itemDetail__description__cartButton"} onClick={() => {
                                if(sizeSelect.current.value === "") return;
                               if(! item.sizes.find((size)=>(size.size === sizeSelect.current.value))) return;
                                addToCart(item.id, sizeSelect.current.value)
                            }}>Přidat do košíku
-                           </button>
+                           </motion.button>
                            <button onClick={(e)=>{
                                e.cancelBubble = true;
                                if (e.stopPropagation) e.stopPropagation();

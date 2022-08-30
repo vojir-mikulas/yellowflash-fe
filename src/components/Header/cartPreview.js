@@ -25,7 +25,7 @@ const CartPreview = () => {
 
     if (loading) return
     return (
-        <motion.div className={"cart-preview modal"}
+        <motion.div className={"cart-preview  modal"}
                     initial={{opacity:0}}
                     animate={{opacity:1}}
                     transition={{ duration: 0.2 }}

@@ -5,7 +5,7 @@ import usePrice from "../../hooks/usePrice";
 import axios from "axios";
 import {billingInfoActions} from "../../redux/billingInfo-slice";
 import {cartActions} from "../../redux/cart-slice";
-
+import {motion} from "framer-motion"
 
 const CartDashboard = (props) => {
     const discount = useSelector((state) => (state.billingInfo.discount.amount ? state.billingInfo.discount.amount : 0))

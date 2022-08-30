@@ -3,9 +3,11 @@ import {Link, useNavigate, useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
 import CartPreview from "./cartPreview";
 import SideMenu from "./sideMenu";
+import {AnimatePresence, motion} from "framer-motion"
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCartShopping,faHeart} from "@fortawesome/free-solid-svg-icons";
+import CartToast from "./CartToast";
 
 const getWindowWidth = () => {
     const {innerWidth} = window;
@@ -41,48 +43,52 @@ const Header = () => {
     }, []);
 
     return (
-        <div>
-            <header className={"header"}>
-                <div className="wrapper header--flex">
-                    <nav className="header__nav">
+
+            <div>
+                <header className={"header"}>
+                    <div className="wrapper header--flex">
+                        <nav className="header__nav">
                          <span className={(sex === "men") && "sex--checked"}   style={{cursor: "pointer"}} onClick={(e) => {
                              handleMenu()
                              setSex("men")
                          }}>Pánské</span>
-                        <span className={(sex === "women") && "sex--checked"} style={{cursor: "pointer"}} onClick={(e) => {
-                            handleMenu()
-                            setSex("women")
-                        }}> Dámské</span>
-                    </nav>
-                    <h1 style={{cursor: "pointer"}} onClick={() => {
-                        navigate("/", {replace: true})
-                    }}>YELLOW FLASH</h1>
-                    <div className="header__cart-nav">
-                        <div style={{position: "relative"}}><span style={{position:"relative"}} onClick={()=>{navigate("/wishlist",{replace:true})}}><FontAwesomeIcon className="href" icon={faHeart}/><span
-                            className="item-count">{wishlistItemsCount}</span></span>
-                        </div>
-                        <div style={{position: "relative"}} onMouseLeave={() => (setCartPreviewVisibility(false))}>
+                            <span className={(sex === "women") && "sex--checked"} style={{cursor: "pointer"}} onClick={(e) => {
+                                handleMenu()
+                                setSex("women")
+                            }}> Dámské</span>
+                        </nav>
+                        <h1 style={{cursor: "pointer"}} onClick={() => {
+                            navigate("/", {replace: true})
+                        }}>YELLOW FLASH</h1>
+                        <div className="header__cart-nav">
+                            <div style={{position: "relative"}}><span style={{position:"relative"}} onClick={()=>{navigate("/wishlist",{replace:true})}}><FontAwesomeIcon className="href" icon={faHeart}/><span
+                                className="item-count">{wishlistItemsCount}</span></span>
+                            </div>
+                            <div style={{position: "relative"}} onMouseLeave={() => (setCartPreviewVisibility(false))}>
                             <span style={{position:"relative"}} onMouseEnter={() => (setCartPreviewVisibility(true))} onClick={(e) => {
                                 navigate("/cart", {replace: true})
                                 e.cancelBubble = true;
                                 if (e.stopPropagation) e.stopPropagation();
                             }}> <FontAwesomeIcon className="href" icon={faCartShopping}/> <span className="item-count">{cartItemsCount}</span></span>
-                            {((windowWidth >= 1000) && cartPreviewVisibility) && <CartPreview/>}
+                                {((windowWidth >= 1000) && cartPreviewVisibility) && <CartPreview/>}
+
+                            </div>
                         </div>
                     </div>
-                </div>
-                {(windowWidth <= 500) && <span onClick={()=>(setMenuVisibility(true))} className={"menu-icon"}>menu</span>}
-            </header>
-            {menuVisibility && <SideMenu config={{
-                sex: sex,
-                setVisibility: setMenuVisibility,
-                visibility:menuVisibility,
-                width: windowWidth,
-                setSex:setSex,
-                cartItemsCount:cartItemsCount,
-                wishlistItemsCount:wishlistItemsCount
-            }}/>}
-        </div>
+                    {(windowWidth <= 500) && <span onClick={()=>(setMenuVisibility(true))} className={"menu-icon"}>menu</span>}
+                </header>
+                <CartToast/>
+                {menuVisibility && <SideMenu config={{
+                    sex: sex,
+                    setVisibility: setMenuVisibility,
+                    visibility:menuVisibility,
+                    width: windowWidth,
+                    setSex:setSex,
+                    cartItemsCount:cartItemsCount,
+                    wishlistItemsCount:wishlistItemsCount
+                }}/>}
+            </div>
+
     );
 };
 

@@ -1,10 +1,12 @@
 import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faFacebook,faTiktok,faInstagram,faTwitter,faPinterest } from '@fortawesome/free-brands-svg-icons'
+import {motion} from "framer-motion";
 
 const Footer = () => {
     return (
         <footer className={"wrapper"}>
+
             <div className={"footer__contact"}>
                 <h4>Potřebuješ pomoc?</h4>
                 <div>

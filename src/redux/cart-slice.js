@@ -4,14 +4,26 @@ const cartSlice = createSlice({
     name: "cart",
     initialState: {
         itemList: [],
+        cartQueue: [],
         totalQuantity: 0,
         price: 0
     },
     reducers: {
+        deleteFromCartQueue(state,action){
+            const index = state.cartQueue.findIndex((item)=>(item.id === action.payload.id));
+            state.cartQueue.splice(index,1)
+        },
         addToCart(state, action) {
             const newItem = action.payload;
             //check if item is already in cart
             const existingItem = state.itemList.find((item) => (item.id === newItem.id && item.size === newItem.size));
+
+            state.cartQueue.push({
+                id: newItem.id,
+                size: newItem.size,
+                quantity: 1
+            })
+
             if (existingItem) {
                 existingItem.quantity++;
                 state.totalQuantity = getCartItemsCount(state.itemList);
@@ -22,6 +34,7 @@ const cartSlice = createSlice({
                 size: newItem.size,
                 quantity: 1
             })
+
             state.totalQuantity = getCartItemsCount(state.itemList);
         },
         removeFromCart(state, action) {

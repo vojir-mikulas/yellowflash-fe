@@ -1,6 +1,6 @@
 import {useSearchParams} from "react-router-dom";
 import {useEffect, useRef} from "react";
-
+import {AnimatePresence, motion} from "framer-motion"
 const PriceRangeMenu = (props) => {
     const lowestPriceInput = useRef(null)
     const highestPriceInput = useRef(null)
@@ -24,7 +24,9 @@ const PriceRangeMenu = (props) => {
 
     },[])
     return (
-        <div className={"filter__menu "+ (props.visible ? "filter__menu--visible" : "")}>
+        <motion.div className={"filter__menu "+ (props.visible ? "filter__menu--visible" : "")}
+
+        >
 
            <div className="filter__menu__price-range">
 
@@ -33,7 +35,7 @@ const PriceRangeMenu = (props) => {
                <input placeholder="5000 Kč"  ref={highestPriceInput} onInput={handleHighestPriceChange} type="number" name="highestPrice" min={0}/>
 
            </div>
-        </div>
+        </motion.div>
     );
 };
 

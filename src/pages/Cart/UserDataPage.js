@@ -76,7 +76,7 @@ const UserDataPage = () => {
                                 placeholder: "Jméno *",
                                 name: "name",
                                 initialValue: billingInformation.name,
-                                regexString: /^[a-zA-Zá-žÁ-Ž]{3,20}$/,
+                                regexString:  /^[a-zA-Zá-žÁ-Ž]{3,20}\s?$/,
                                 setError: setNameError,
                                 error: nameError,
                                 setParentValue: setName
@@ -86,7 +86,7 @@ const UserDataPage = () => {
                                 placeholder: "Příjmení *",
                                 name: "surname",
                                 initialValue: billingInformation.surname,
-                                regexString: /^[a-zA-Zá-žÁ-Ž]{3,20}$/,
+                                regexString:  /^[a-zA-Zá-žÁ-Ž]{3,20}\s?$/,
                                 setError: setSurnameError,
                                 error: surnameError,
                                 setParentValue: setSurname
@@ -115,7 +115,7 @@ const UserDataPage = () => {
                                 placeholder: "Město *",
                                 name: "city",
                                 initialValue: billingInformation.city,
-                                regexString: /^[a-zA-Zá-žÁ-Ž]{3,20}$/,
+                                regexString: /(.|\s)*\S(.|\s)*/,
                                 setError: setCityError,
                                 error: cityError,
                                 setParentValue: setCity
@@ -125,7 +125,7 @@ const UserDataPage = () => {
                                 placeholder: "PSČ *",
                                 name: "zipcode",
                                 initialValue: billingInformation.zipcode,
-                                regexString: /^(\d{5})$/,
+                                regexString: /^\d{3}(?:[- ]?\d{2})?$/,
                                 setError: setZipcodeError,
                                 error: zipcodeError,
                                 setParentValue: setZipcode

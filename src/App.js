@@ -7,7 +7,7 @@ import axios from "axios";
 import {cartActions} from "./redux/cart-slice";
 import Footer from "./components/Footer/Footer";
 import AnimatedRoutes from "./components/AnimatedRoutes";
-
+import {AnimatePresence, motion} from "framer-motion"
 
 function App() {
     const cartItems = useSelector((state) => state.cart.itemList)
@@ -41,7 +41,7 @@ function App() {
           <div className="routes">
             <AnimatedRoutes/>
           </div>
-            <Footer></Footer>
+            <Footer> </Footer>
         </Router>
     );
 }
