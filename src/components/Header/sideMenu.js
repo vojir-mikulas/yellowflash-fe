@@ -22,7 +22,8 @@ const node = useClickOutside(()=>{config.setVisibility(false)})
     return (
       <div className={"side-menu__bg"}>
           <div ref={node}  className={"side-menu"}>
-              {config.width <= 500 &&  <div>
+              {config.width >= 500 && <h1>{config.sex === "women" ? "Dámské" : "Pánské"}</h1>}
+              {config.width <= 500 &&  <div className={"side-menu__header"}>
                   <button className={(config.sex === "men") && "button--checked"} onClick={(e)=>{
                       config.setSex("men")
 
@@ -31,7 +32,7 @@ const node = useClickOutside(()=>{config.setVisibility(false)})
                       config.setSex("women")
 
                   }}>Dámské </button></div>}
-              <ul>
+              {config.sex && <ul className={"side-menu__nav"}>
                   <li className={"side-menu__news"} onClick={()=>(navigate("/"))}>Novinky</li>
 
                   {categories.map((category)=>{
@@ -42,8 +43,8 @@ const node = useClickOutside(()=>{config.setVisibility(false)})
                           }}>{category.title}</li>
                       )
                   })}
-              </ul>
-              {config.width <= 500 && <ul>
+              </ul>}
+              {config.width <= 500 && <ul className={"side-menu__cartNav"}>
                   <li onClick={()=> {
                       navigate("/wishlist")
                       config.setVisibility(false)

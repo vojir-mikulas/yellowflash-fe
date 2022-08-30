@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Staatliches&display=swap");
+::-moz-selection {
+  color: black;
+  background: #ffb700;
+}
+
+::selection {
+  color: black;
+  background: #ffb700;
+}
+
 * {
   color: #292D32;
   margin: 0;
@@ -37,7 +47,7 @@ a {
 }
 
 a:hover {
-  color: #FFC804;
+  color: #ffca21;
   transition: 0.1s;
 }
 
@@ -47,7 +57,7 @@ a:hover {
 }
 
 .href:hover {
-  color: #FFC804;
+  color: #ffca21;
   transition: 0.2s;
 }
 
@@ -56,7 +66,7 @@ ul {
 }
 
 .slash {
-  color: #FFC804;
+  color: #ffca21;
   font-weight: bold;
 }
 
@@ -110,7 +120,7 @@ input[type=number] {
   top: 0.4rem;
   left: 1.5rem;
   font-size: 1rem;
-  background-color: #FFC804;
+  background-color: #ffca21;
   width: 1.1rem;
   height: 1.1rem;
   padding: 0.3rem;
@@ -128,7 +138,7 @@ input[type=number] {
   gap: 2rem;
 }
 .header .header__nav span:hover {
-  color: #FFC804;
+  color: #ffca21;
   transition: 0.1s;
 }
 .header .header__nav span {
@@ -160,7 +170,7 @@ input[type=number] {
   background-color: #F9F9F9;
 }
 .cart-preview button {
-  background-color: #FFC804;
+  background-color: #ffca21;
   width: 100%;
   padding: 20px;
 }
@@ -240,8 +250,40 @@ input[type=number] {
   justify-content: flex-start;
   z-index: 11;
 }
+.side-menu__bg .side-menu .side-menu__header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2vw;
+}
+.side-menu__bg .side-menu .side-menu__header button {
+  width: 100%;
+  height: 100%;
+  font-size: 5.2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.side-menu__bg .side-menu .side-menu__nav {
+  margin: 20px 0;
+}
+.side-menu__bg .side-menu .side-menu__nav li {
+  font-size: 2.5rem;
+}
+.side-menu__bg .side-menu .side-menu__nav li:hover {
+  color: #ffca21;
+  transition: 0.2s;
+}
+.side-menu__bg .side-menu .side-menu__cartNav {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  align-items: flex-end;
+}
 .side-menu__bg .side-menu li {
-  font-size: 2.4rem;
+  font-size: 5.2vw;
   font-weight: bold;
   cursor: pointer;
   width: 100%;
@@ -253,7 +295,7 @@ input[type=number] {
   margin: 0 20px;
 }
 .side-menu__bg .side-menu .button--checked {
-  color: #FFC804 !important;
+  color: #ffca21 !important;
   transition: 0.1s;
 }
 .side-menu__bg .side-menu .side-menu__news, .side-menu__bg .side-menu ul, .side-menu__bg .side-menu button {
@@ -280,6 +322,16 @@ input[type=number] {
   }
   .side-menu {
     width: 60vw !important;
+  }
+  .side-menu__nav {
+    margin: 20px 0;
+  }
+  .side-menu__nav li {
+    font-size: 4vw !important;
+    margin: 10px 0;
+  }
+  .side-menu__nav .side-menu__news {
+    margin-bottom: 25px !important;
   }
 }
 .item-card {
@@ -368,6 +420,7 @@ footer {
   border-top: solid 1px #ADADAD;
   display: flex;
   align-items: flex-start;
+  gap: 2rem;
   justify-content: space-between;
   padding: 5vh 0;
 }
@@ -390,7 +443,7 @@ footer ul li {
   cursor: pointer;
 }
 footer ul li:hover {
-  color: #FFC804;
+  color: #ffca21;
   transition: 0.2s;
 }
 footer .footer__socials {
@@ -420,7 +473,7 @@ footer .footer__socials {
 .filter--wrapper {
   width: 85%;
   margin: 30px auto;
-  background-color: #FFC804;
+  background-color: #ffca21;
   padding: 10px 0;
 }
 .filter--wrapper .filter__menu--wrapper {
@@ -429,6 +482,7 @@ footer .footer__socials {
 }
 .filter--wrapper h2 {
   color: black;
+  white-space: nowrap;
 }
 .filter--wrapper .filter__menu__items {
   display: flex;
@@ -449,7 +503,7 @@ footer .footer__socials {
 }
 .filter--wrapper .filter__button--checked {
   background-color: black;
-  color: #FFC804;
+  color: #ffca21;
 }
 .filter--wrapper .filter__menu {
   display: none;
@@ -858,7 +912,7 @@ footer .footer__socials {
 }
 .dashboard .cartButton {
   width: 100%;
-  background-color: #FFC804;
+  background-color: #ffca21;
   font-weight: bold;
   font-size: 1.8rem;
   padding: 16px 0;
@@ -952,7 +1006,7 @@ footer .footer__socials {
   padding: 10px 10px;
 }
 .wishlist .wishlist__item .cartButton {
-  background-color: #FFC804;
+  background-color: #ffca21;
   font-weight: bold;
   padding: 20px 0;
 }
