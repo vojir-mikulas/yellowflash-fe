@@ -25,7 +25,7 @@ const WishlistPage = () => {
     return (
         <div className="wrapper">
             <div className={"wishlist"}>
-                <span> YELLOWFLASH.COM / SEZNAM PŘÁNÍ</span>
+                <span> YELLOWFLASH.COM <span className="slash">/ </span> SEZNAM PŘÁNÍ</span>
                 <h1>SEZNAM PŘÁNÍ</h1>
                 <div>
                     <div className={"wishlist__item-grid"}>

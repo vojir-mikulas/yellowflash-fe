@@ -6,9 +6,11 @@
 @import 'components/Header';
 @import 'components/Item';
 @import "components/InputCheckbox";
+@import 'components/FOoter';
 
 /*  PAGES  */
 @import "pages/Items";
 @import "pages/ItemDetail";
 @import "pages/Cart";
 @import "pages/Wishlist";
+@import "pages/Order";

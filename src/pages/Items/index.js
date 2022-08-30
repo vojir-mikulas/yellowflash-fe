@@ -10,6 +10,7 @@ import Filters from "./Filters";
 const Items = () => {
     const [items, setItems] = useState([]);
     const [categoryTitle,setCategoryTitle] = useState("");
+    const [sexTitle,setSexTitle] = useState("");
     const [loading, setLoading] = useState(true);
     const {sex, category} = useParams()
     let [requestString, setRequestString] = useState(`categories=${sex};${category}`);
@@ -31,7 +32,7 @@ const Items = () => {
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_SERVER_URL}/categories/${sex}`).then(response => {
             if(!response.data) navigate("../error")
-
+            setSexTitle(response.data.title)
         }).catch(error => {
             console.error("Error fetching data: ", error)
         })
@@ -52,7 +53,7 @@ const Items = () => {
     if(loading === true) return (<div><h1>loading</h1></div>)
     return (
         <div>
-            <Filters category={categoryTitle}/>
+            <Filters category={categoryTitle} sex={sexTitle}/>
 
             <main className="wrapper item--grid">
 

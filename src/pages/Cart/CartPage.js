@@ -7,6 +7,7 @@ import {useNavigate} from "react-router-dom";
 import {billingInfoActions} from "../../redux/billingInfo-slice";
 import cartItem from "./CartItem";
 
+
 const CartPage = () => {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)

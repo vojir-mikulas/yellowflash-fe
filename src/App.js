@@ -22,6 +22,7 @@ import CheckoutForm from "./pages/Cart/CheckoutForm";
 import CheckoutStatus from "./pages/Cart/CheckoutStatus";
 import WishlistPage from "./pages/Wishlist";
 import {cartActions} from "./redux/cart-slice";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -74,8 +75,7 @@ function App() {
                   <Route path="*" element={<ErrorPage/>}/>
               </Routes>
           </div>
-
-
+            <Footer></Footer>
         </Router>
     );
 }

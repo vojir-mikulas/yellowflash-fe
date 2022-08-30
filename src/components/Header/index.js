@@ -4,6 +4,9 @@ import {useSelector} from "react-redux";
 import CartPreview from "./cartPreview";
 import SideMenu from "./sideMenu";
 
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCartShopping,faHeart} from "@fortawesome/free-solid-svg-icons";
+
 const getWindowWidth = () => {
     const {innerWidth} = window;
     return innerWidth
@@ -55,17 +58,16 @@ const Header = () => {
                         navigate("/", {replace: true})
                     }}>YELLOW FLASH</h1>
                     <div className="header__cart-nav">
-                        <div style={{position: "relative"}}><Link to="/wishlist">oblíbené<span
-                            className="item-count">{wishlistItemsCount}</span></Link>
+                        <div style={{position: "relative"}}><span style={{position:"relative"}} onClick={()=>{navigate("/wishlist",{replace:true})}}><FontAwesomeIcon className="href" icon={faHeart}/><span
+                            className="item-count">{wishlistItemsCount}</span></span>
                         </div>
                         <div style={{position: "relative"}} onMouseLeave={() => (setCartPreviewVisibility(false))}>
-                            <span className="href" style={{cursor: "pointer"}}
-                                  onMouseEnter={() => (setCartPreviewVisibility(true))} onClick={(e) => {
+                            <span style={{position:"relative"}} onMouseEnter={() => (setCartPreviewVisibility(true))} onClick={(e) => {
                                 navigate("/cart", {replace: true})
                                 e.cancelBubble = true;
                                 if (e.stopPropagation) e.stopPropagation();
-                            }}>košík <span className="item-count">{cartItemsCount}</span></span>
-                            {((windowWidth >= 500) && cartPreviewVisibility) && <CartPreview/>}
+                            }}> <FontAwesomeIcon className="href" icon={faCartShopping}/> <span className="item-count">{cartItemsCount}</span></span>
+                            {((windowWidth >= 1000) && cartPreviewVisibility) && <CartPreview/>}
                         </div>
                     </div>
                 </div>

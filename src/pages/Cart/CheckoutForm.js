@@ -51,20 +51,24 @@ const CheckoutForm = () => {
 
     }
     return (
-        <div>
+      <div className="cart-page">
+          <span style={{textAlign:"center"}}> YELLOWFLASH.COM <span className="slash">/</span> NAKUPNÍ KOŠÍK</span>
+          <h1>NÁKUPNÍ KOŠÍK</h1>
+          <div className={"cart-page__container"}>
 
-            <form ref={formNode} onSubmit={handleSubmit} style={{backgroundColor: "lightgray", padding: "50px"}}>
-                <PaymentElement/>
-                {/* Show error message to your customers */}
-                {errorMessage && <div>{errorMessage}</div>}
+              <form ref={formNode} onSubmit={handleSubmit} style={{backgroundColor: "lightgray", padding: "50px"}}>
+                  <PaymentElement/>
+                  {/* Show error message to your customers */}
+                  {errorMessage && <div>{errorMessage}</div>}
 
-            </form>
-            <CartDashboard options={{
-                text: "Zaplatit",
-                onClickEvent: handleSubmit,
-                disabled: !stripe
-            }}/>
-        </div>
+              </form>
+              <CartDashboard options={{
+                  text: "Zaplatit",
+                  onClickEvent: handleSubmit,
+                  disabled: !stripe
+              }}/>
+          </div>
+      </div>
     );
 };
 export default CheckoutForm;
