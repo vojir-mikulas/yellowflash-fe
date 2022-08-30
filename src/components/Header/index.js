@@ -76,6 +76,7 @@ const Header = () => {
             {menuVisibility && <SideMenu config={{
                 sex: sex,
                 setVisibility: setMenuVisibility,
+                visibility:menuVisibility,
                 width: windowWidth,
                 setSex:setSex,
                 cartItemsCount:cartItemsCount,

@@ -7,7 +7,7 @@ import {wishlistActions} from "../../redux/wishlist-slice";
 import useWishlistCheck from "../../hooks/WishlistCheck";
 import SizeHelper from "./sizeHelper";
 import CompositionDetails from "./compositionDetails";
-
+import {motion} from "framer-motion"
 
 const ItemDetail = () => {
     const [item, setItem] = useState({});
@@ -49,7 +49,10 @@ const ItemDetail = () => {
     }, [])
     if (loading) return (<h1>loading...</h1>)
     return (
-        <main className={"wrapper"}>
+        <motion.div className={"wrapper"}
+                    initial={{opacity:0}}
+                    animate={{opacity:1}}
+                    exit={{opacity:0}}>
             {sizehelperVisibility && <SizeHelper setVisibility={setSizehelperVisibility}/>}
             {compositiondetailsVisibility && <CompositionDetails setVisibility={setCompositiondetailsVisibility}/>}
             <div className={"itemDetail"}>
@@ -94,7 +97,7 @@ const ItemDetail = () => {
                 </div>
 
             </div>
-        </main>
+        </motion.div>
     );
 };
 

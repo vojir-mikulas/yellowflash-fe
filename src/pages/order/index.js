@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {useNavigate, useParams} from "react-router-dom";
 import OrderItem from "./OrderItem";
-
+import {motion} from "framer-motion"
 const OrderPage = () => {
     const {id} = useParams()
     const navigate = useNavigate()
@@ -39,7 +39,9 @@ const OrderPage = () => {
     },[items])
     if(loading || shippingLoading) return;
 
-    return (<div className={"orderPage"}>
+    return (<motion.div className={"orderPage"}  initial={{opacity:0}}
+                        animate={{opacity:1}}
+                        exit={{opacity:0}}>
         <span style={{textAlign:"center"}}> YELLOWFLASH.COM <span className="slash">/</span> OBJEDNÁVKA <span className="slash">/</span>  {order.id}</span>
         <h1>DĚKUJEME ZA OBJEDNÁVKU!</h1>
         <span> Detail objednávky byl zaslán emailem</span>
@@ -63,7 +65,7 @@ const OrderPage = () => {
                <span>{`${(order.amount / 100) - shipping.price} Kč`}</span>
            </div>
        </div>
-    </div>);
+    </motion.div>);
 
 };
 

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useStripe} from "@stripe/react-stripe-js";
 import {useNavigate} from "react-router-dom";
-
+import {motion} from "framer-motion"
 const PaymentStatus = () => {
     const stripe = useStripe();
     const [message, setMessage] = useState(null);

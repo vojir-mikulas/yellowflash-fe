@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleCheck, faCircleXmark, faCircleExclamation} from "@fortawesome/free-solid-svg-icons";
-
+import {motion} from "framer-motion"
 const successHtml = <div className={"payment-success"}><FontAwesomeIcon icon={faCircleCheck}/> <span>Platba byla přijata!</span></div>;
 const pendingHtml = <div className={"payment-pending"}><FontAwesomeIcon icon={faCircleExclamation}/> <span>Platba se zpracovává, dáme vědět až bude přijata.</span>
 </div>;
@@ -65,9 +65,12 @@ const CheckoutStatus = () => {
         }, 5000)
     }, [stripe]);
 
-    return <div className="checkout-status">
+    return <motion.div className="checkout-status"
+                       initial={{opacity:0}}
+                       animate={{opacity:1}}
+                       exit={{opacity:0}}>
         {html}
-    </div>;
+    </motion.div>;
 
 };
 

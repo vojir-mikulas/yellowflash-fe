@@ -5,7 +5,7 @@ import {billingInfoActions} from "../../redux/billingInfo-slice";
 import {cartActions} from "../../redux/cart-slice";
 import {useRef, useState} from "react";
 import CartDashboard from "./CartDashboard";
-
+import {motion} from "framer-motion"
 const CheckoutForm = () => {
     const stripe = useStripe();
     const elements = useElements();
@@ -51,7 +51,11 @@ const CheckoutForm = () => {
 
     }
     return (
-      <div className="cart-page">
+      <motion.div className="cart-page"
+
+                  initial={{opacity:0}}
+                  animate={{opacity:1}}
+                  exit={{opacity:0}}>
           <span style={{textAlign:"center"}}> YELLOWFLASH.COM <span className="slash">/</span> NAKUPNÍ KOŠÍK</span>
           <h1>NÁKUPNÍ KOŠÍK</h1>
           <div className={"cart-page__container"}>
@@ -74,7 +78,7 @@ const CheckoutForm = () => {
                   disabled: !stripe
               }}/>
           </div>
-      </div>
+      </motion.div>
     );
 };
 export default CheckoutForm;

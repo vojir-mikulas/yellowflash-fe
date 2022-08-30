@@ -9,7 +9,7 @@ import Packeta from "../../img/Packeta.svg"
 import Posta from "../../img/Posta.svg"
 import Balikovna from "../../img/Balikovna.svg"
 import InputCheckboxShipping from "./InputCheckboxShipping";
-
+import {motion} from "framer-motion"
 
 const ShippingPage = () => {
     const [shippingMethod, setShippingMethod] = useState("")
@@ -35,7 +35,10 @@ const ShippingPage = () => {
         }
     }, [shippingMethod])
     return (
-        <div className={"cart-page"}>
+        <motion.div className={"cart-page"}
+                    initial={{opacity:0}}
+                    animate={{opacity:1}}
+                    exit={{opacity:0}}>
             <span style={{textAlign:"center"}}> YELLOWFLASH.COM <span className="slash">/</span> ZPŮSOB DORUČENÍ</span>
             <h1>ZPŮSOB DORUČENÍ</h1>
             <div className="cart-page__container">
@@ -92,7 +95,7 @@ const ShippingPage = () => {
                     disabled: false
                 }}/>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

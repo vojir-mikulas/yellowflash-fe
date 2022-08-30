@@ -4,7 +4,7 @@ import {useSelector} from "react-redux";
 import {useEffect} from "react";
 import axios from "axios";
 import WishlistItem from "./wishlistItem";
-
+import {motion} from "framer-motion"
 const WishlistPage = () => {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
@@ -23,7 +23,9 @@ const WishlistPage = () => {
 
     if (loading) return (<h1>loading...</h1>)
     return (
-        <div className="wrapper">
+        <motion.div className="wrapper"  initial={{opacity:0}}
+             animate={{opacity:1}}
+             exit={{opacity:0}}>
             <div className={"wishlist"}>
                 <span> YELLOWFLASH.COM <span className="slash">/ </span> SEZNAM PŘÁNÍ</span>
                 <h1>SEZNAM PŘÁNÍ</h1>
@@ -37,7 +39,7 @@ const WishlistPage = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

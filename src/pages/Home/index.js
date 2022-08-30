@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import axios from "axios";
 import Item from "../../components/Item";
-
+import {motion} from "framer-motion"
 const Home = () => {
     const [womenItems, setWomenItems] = useState([])
     const [womenItemsLoading,setWomenItemsLoading] = useState(true);
@@ -27,7 +27,13 @@ const Home = () => {
 
 
     return (
-        <div className={"home"}>
+        <motion.div
+            className={"home"}
+
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            exit={{opacity:0}}
+        >
             <div className="home__banner">
 
             </div>
@@ -53,7 +59,7 @@ const Home = () => {
                      </div>
                  </div>}
              </div>
-        </div>
+        </motion.div>
     );
 };
 

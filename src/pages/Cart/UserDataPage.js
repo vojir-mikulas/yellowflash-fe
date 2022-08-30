@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {billingInfoActions} from "../../redux/billingInfo-slice";
 import InputText from "../../components/InputText";
-
+import {motion} from "framer-motion"
 
 const UserDataPage = () => {
     const [email, setEmail] = useState("")
@@ -38,7 +38,10 @@ const UserDataPage = () => {
 
     const navigate = useNavigate();
     return (
-        <div className={"cart-page"}>
+        <motion.div className={"cart-page"}
+                    initial={{opacity:0}}
+                    animate={{opacity:1}}
+                    exit={{opacity:0}}>
             <span style={{textAlign:"center"}}> YELLOWFLASH.COM <span className="slash">/</span> DORUČOVACÍ ÚDAJE</span>
             <h1>DORUČOVACÍ ÚDAJE</h1>
             <div className="cart-page__container">
@@ -146,7 +149,7 @@ const UserDataPage = () => {
                     disabled: false
                 }}/>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

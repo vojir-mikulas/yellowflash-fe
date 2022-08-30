@@ -6,7 +6,7 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import {billingInfoActions} from "../../redux/billingInfo-slice";
 import cartItem from "./CartItem";
-
+import {motion} from "framer-motion"
 
 const CartPage = () => {
     const [items, setItems] = useState([])
@@ -37,7 +37,11 @@ const CartPage = () => {
 
     if (loading) return (<h1>loading...</h1>)
     return (
-        <div className={"cart-page"}>
+        <motion.div className={"cart-page"}
+
+                    initial={{opacity:0}}
+                    animate={{opacity:1}}
+                    exit={{opacity:0}}>
             <span style={{textAlign:"center"}}> YELLOWFLASH.COM <span className="slash">/</span> NAKUPNÍ KOŠÍK</span>
             <h1>NÁKUPNÍ KOŠÍK</h1>
 
@@ -67,7 +71,7 @@ const CartPage = () => {
                     disabled: false
                 }}/>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

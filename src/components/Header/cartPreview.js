@@ -4,7 +4,7 @@ import { useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import CartPreviewItem from "./cartPreviewItem";
-
+import {motion} from "framer-motion"
 const CartPreview = () => {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
@@ -25,7 +25,12 @@ const CartPreview = () => {
 
     if (loading) return
     return (
-        <div className={"cart-preview modal"} >
+        <motion.div className={"cart-preview modal"}
+                    initial={{opacity:0}}
+                    animate={{opacity:1}}
+                    transition={{ duration: 0.2 }}
+                    exit={{opacity:0}}>
+
          <div>
              <h2>Váš košík</h2>
              <div className="cart-preview__item-container">
@@ -49,7 +54,7 @@ const CartPreview = () => {
          </div>
             <button onClick={()=>
             navigate('/cart',{replace:true})}>Do Košíku</button>
-        </div>
+        </motion.div>
     );
 };
 

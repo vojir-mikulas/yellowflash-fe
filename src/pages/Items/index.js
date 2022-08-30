@@ -6,7 +6,7 @@ import PriceRangeMenu from "./PriceRangeMenu";
 import axios from "axios";
 import Item from "../../components/Item/index";
 import Filters from "./Filters";
-
+import {motion} from "framer-motion"
 const Items = () => {
     const [items, setItems] = useState([]);
     const [categoryTitle,setCategoryTitle] = useState("");
@@ -52,7 +52,9 @@ const Items = () => {
     }, [requestString])
     if(loading === true) return (<div><h1>loading</h1></div>)
     return (
-        <div>
+        <motion.div  initial={{opacity:0}}
+                     animate={{opacity:1}}
+                     exit={{opacity:0}}>
             <Filters category={categoryTitle} sex={sexTitle}/>
 
             <main className="wrapper item--grid">
@@ -64,7 +66,7 @@ const Items = () => {
                 })}
                 {(items.length === 0) &&<h2>Nebyli nalezeny žadné položky...</h2>}
             </main>
-        </div>
+        </motion.div>
     );
 };
 
