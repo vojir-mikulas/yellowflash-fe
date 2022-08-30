@@ -60,7 +60,7 @@ const CheckoutStatus = () => {
                 }
             });
         setTimeout(()=>{
-           // navigate(`../../../order/${paymentId}`)
+             navigate(`../../../order/${paymentId}`)
 
         }, 5000)
     }, [stripe]);

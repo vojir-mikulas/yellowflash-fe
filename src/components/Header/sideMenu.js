@@ -32,7 +32,7 @@ const node = useClickOutside(()=>{config.setVisibility(false)})
 
                   }}>Dámské </button></div>}
               <ul>
-                  <li className={"side-menu__news"}>Novinky</li>
+                  <li className={"side-menu__news"} onClick={()=>(navigate("/"))}>Novinky</li>
 
                   {categories.map((category)=>{
                       return(

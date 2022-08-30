@@ -730,7 +730,7 @@ footer .footer__socials {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: inherit;
+  min-height: inherit;
   font-weight: bold;
 }
 .cart .checkout-status .payment-success * {
