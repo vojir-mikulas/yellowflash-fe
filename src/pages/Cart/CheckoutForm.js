@@ -60,7 +60,13 @@ const CheckoutForm = () => {
                   <PaymentElement/>
                   {/* Show error message to your customers */}
                   {errorMessage && <div>{errorMessage}</div>}
-
+                  <p><br/>
+                      <h3>Tip</h3>
+                  Pro potvrezní v test modu použijte <br/>
+                     <b> Číslo karty:</b> 4242 4242 4242 4242 <br/>
+                     <b> Konec platnosti:</b> vzdálené datum <br/>
+                      <b>CVC: </b>jakékoliv tříciferné číslo <br/>
+                  </p>
               </form>
               <CartDashboard options={{
                   text: "Zaplatit",
