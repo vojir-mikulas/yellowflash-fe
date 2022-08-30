@@ -1,0 +1,30 @@
+.home{
+  .home__banner{
+    width: 100%;
+    height: 100vh;
+    background-color: rebeccapurple;
+  }
+  .wrapper{
+    width: 90%;
+  }
+  .home__item-grid{
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(10,1fr);
+    gap: 1.5rem;
+    overflow: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .home__item-grid::-webkit-scrollbar {
+    display: none;
+  }
+  h3{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  .home__new-men , .home__new-women{
+  margin:4rem 0;
+  }
+
+}

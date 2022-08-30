@@ -80,6 +80,7 @@ const ItemDetail = () => {
                        <div className={"itemDetail__description__buttons"}>
                            <button className={"itemDetail__description__cartButton"} onClick={() => {
                                if(sizeSelect.current.value === "") return;
+                              if(! item.sizes.find((size)=>(size.size === sizeSelect.current.value))) return;
                                addToCart(item.id, sizeSelect.current.value)
                            }}>Přidat do košíku
                            </button>

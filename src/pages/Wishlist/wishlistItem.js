@@ -52,6 +52,7 @@ const WishlistItem = (props) => {
                 </select>
                 <button className={"cartButton"} onClick={()=>{
                     if(sizeSelect.current.value === "") return
+                    if(! props.item.sizes.find((size)=>(size.size === sizeSelect.current.value))) return;
                     handleWishlist(props.item.id)
                     addToCart(props.item.id,sizeSelect.current.value)
                 }}>Přidat do košíku</button>
