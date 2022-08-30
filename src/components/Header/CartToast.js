@@ -16,7 +16,7 @@ const CartToast = () => {
             {cartQueue.map((cartItem)=>{
 
                     return(
-                        <CartToastItem key={cartItem.id + cartItem.size + cartItem.quantity} item={{
+                        <CartToastItem key={cartItem.id + (100 * Math.random())} item={{
                             id: cartItem.id,
                             size: cartItem.size,
                             quantity: cartItem.quantity,
