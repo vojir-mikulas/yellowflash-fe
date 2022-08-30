@@ -43,6 +43,7 @@ const WishlistItem = (props) => {
 
                 </div>
                 <select ref={sizeSelect} name="" id="">
+                    <option value="" selected disabled hidden>Vyberte velikost</option>
                     {props.item.sizes.map((size)=>{
                         return(
                             <option value={size.size}>{size.size}</option>
@@ -50,6 +51,7 @@ const WishlistItem = (props) => {
                     })}
                 </select>
                 <button className={"cartButton"} onClick={()=>{
+                    if(sizeSelect.current.value === "") return
                     handleWishlist(props.item.id)
                     addToCart(props.item.id,sizeSelect.current.value)
                 }}>Přidat do košíku</button>

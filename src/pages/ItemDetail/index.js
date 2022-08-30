@@ -8,6 +8,7 @@ import useWishlistCheck from "../../hooks/WishlistCheck";
 import SizeHelper from "./sizeHelper";
 import CompositionDetails from "./compositionDetails";
 
+
 const ItemDetail = () => {
     const [item, setItem] = useState({});
     const [loading, setLoading] = useState(true)
@@ -44,11 +45,7 @@ const ItemDetail = () => {
 
         })
 
-        axios.get(`${process.env.REACT_APP_SERVER_URL}/sizes?category=tshirt`).then(response => {
-            setAllSizes(response.data)
-        }).catch(error => {
-            console.error("Error fetching data: ", error)
-        })
+
     }, [])
     if (loading) return (<h1>loading...</h1>)
     return (
@@ -73,7 +70,8 @@ const ItemDetail = () => {
                         <div className={"itemDetail__description__sizes"}>
                             <h3>Velikost</h3>
                             <select ref={sizeSelect}>
-                                {allSizes.map((size) => (
+                                <option value="" selected disabled hidden>Vyberte velikost</option>
+                                {item.sizes.map((size) => (
                                     <option key={size.id} value={size.size}>{size.size}</option>
                                 ))}
                             </select><br/>
@@ -81,6 +79,7 @@ const ItemDetail = () => {
                         </div>
                        <div className={"itemDetail__description__buttons"}>
                            <button className={"itemDetail__description__cartButton"} onClick={() => {
+                               if(sizeSelect.current.value === "") return;
                                addToCart(item.id, sizeSelect.current.value)
                            }}>Přidat do košíku
                            </button>
