@@ -109,6 +109,7 @@ input[type=number] {
   background-color: #F9F9F9;
   font-weight: bold;
   text-align: center;
+  padding: 5px 0;
 }
 .header .href {
   position: relative;
