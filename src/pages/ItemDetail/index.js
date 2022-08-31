@@ -27,6 +27,10 @@ const ItemDetail = () => {
             id,
             size,
         }))
+        dispatch(cartActions.addToCartQueue({
+            id,
+            size,
+        }))
        setTimeout(()=>{
            dispatch(cartActions.deleteFromCartQueue({
                id,
