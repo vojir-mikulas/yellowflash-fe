@@ -1,8 +1,12 @@
 .home{
   .home__banner{
     width: 100%;
-    height: 100vh;
-    background-color: rebeccapurple;
+    height: 110vh;
+    background-color: black;
+    background:url("../../src/img/banner.jpg");
+    background-repeat: no-repeat;
+    background-position:  center;
+    background-size: cover;
   }
   .wrapper{
     width: 90%;
@@ -27,4 +31,14 @@
   margin:4rem 0;
   }
 
+}
+
+@media only screen and (max-width: 800px){
+  .home__banner{
+
+    background:url("../../src/img/banner-phone.jpg") !important;
+    background-position: top !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+  }
 }

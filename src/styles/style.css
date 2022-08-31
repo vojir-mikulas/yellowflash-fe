@@ -483,8 +483,12 @@ footer .footer__socials {
 /*  PAGES  */
 .home .home__banner {
   width: 100%;
-  height: 100vh;
-  background-color: rebeccapurple;
+  height: 110vh;
+  background-color: black;
+  background: url("../../src/img/banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .home .wrapper {
   width: 90%;
@@ -509,6 +513,14 @@ footer .footer__socials {
   margin: 4rem 0;
 }
 
+@media only screen and (max-width: 800px) {
+  .home__banner {
+    background: url("../../src/img/banner-phone.jpg") !important;
+    background-position: top !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+  }
+}
 .item--grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
