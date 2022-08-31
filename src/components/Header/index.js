@@ -6,7 +6,7 @@ import SideMenu from "./sideMenu";
 import {AnimatePresence, motion} from "framer-motion"
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCartShopping,faHeart} from "@fortawesome/free-solid-svg-icons";
+import {faCartShopping,faHeart,faBars} from "@fortawesome/free-solid-svg-icons";
 import CartToast from "./CartToast";
 
 const getWindowWidth = () => {
@@ -75,7 +75,7 @@ const Header = () => {
                             </div>
                         </div>
                     </div>
-                    {(windowWidth <= 500) && <span onClick={()=>(setMenuVisibility(true))} className={"menu-icon"}>menu</span>}
+                    {(windowWidth <= 500) && <span onClick={()=>(setMenuVisibility(true))} className={"menu-icon"}> <FontAwesomeIcon icon={faBars}/> </span>}
                 </header>
                 <CartToast/>
                 {menuVisibility && <SideMenu config={{

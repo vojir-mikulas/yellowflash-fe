@@ -329,10 +329,12 @@ input[type=number] {
 }
 
 .menu-icon {
+  cursor: pointer;
   position: absolute;
+  font-size: 3rem;
   top: 0;
   right: 0;
-  padding: 15px;
+  padding: 12px 10px;
 }
 
 @media only screen and (max-width: 500px) {
