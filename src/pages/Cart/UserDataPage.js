@@ -74,7 +74,7 @@ const UserDataPage = () => {
                         <div className={"input__wrapper"}>
                             <InputText options={{
                                 placeholder: "Jméno *",
-                                name: "name",
+                                name: "given-name",
                                 initialValue: billingInformation.name,
                                 regexString:  /^[a-zA-Zá-žÁ-Ž]{3,20}\s?$/,
                                 setError: setNameError,
@@ -84,7 +84,7 @@ const UserDataPage = () => {
                             }}/>
                             <InputText options={{
                                 placeholder: "Příjmení *",
-                                name: "surname",
+                                name: "family-name",
                                 initialValue: billingInformation.surname,
                                 regexString:  /^[a-zA-Zá-žÁ-Ž]{3,20}\s?$/,
                                 setError: setSurnameError,
@@ -95,14 +95,14 @@ const UserDataPage = () => {
                         </div>
                         <InputText options={{
                             placeholder: "Firma",
-                            name: "company",
+                            name: "organization",
                             initialValue: billingInformation.company,
                             setParentValue: setCompany
 
                         }}/>
                         <InputText options={{
                             placeholder: "Adresa *",
-                            name: "address",
+                            name: "address-line1",
                             initialValue: billingInformation.address,
                             regexString: /(.|\s)*\S(.|\s)*/,
                             setError: setAddressError,
@@ -123,7 +123,7 @@ const UserDataPage = () => {
                             }}/>
                             <InputText options={{
                                 placeholder: "PSČ *",
-                                name: "zipcode",
+                                name: "postal-code",
                                 initialValue: billingInformation.zipcode,
                                 regexString: /^\d{3}(?:[- ]?\d{2})?$/,
                                 setError: setZipcodeError,

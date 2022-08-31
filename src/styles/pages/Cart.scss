@@ -59,7 +59,9 @@
         gap: 3rem;
       }
     }
-
+    .input--default {
+      border: 1px solid pink !important;
+    }
     .input--error {
       border: 1px solid indianred;
       color: indianred;
@@ -68,9 +70,13 @@
     .input--correct {
       border: 1px solid limegreen;
     }
+
   }
 }
 
+.checkout__form{
+  padding: 4vw;
+}
 .cart {
   min-height: 70vh;
 

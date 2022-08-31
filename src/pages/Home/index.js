@@ -39,7 +39,7 @@ const Home = () => {
             </div>
              <div className="wrapper">
                  {<div className="home__new-men">
-                     <h3>Pánské novinky</h3>
+                     <h2>Pánské novinky</h2>
                      <div ref={menItemsNode}  className="home__item-grid">
                          {!menItemsLoading && menItems.map((item)=>{
                              return (
@@ -49,7 +49,7 @@ const Home = () => {
                      </div>
                  </div>}
                  {<div className="home__new-women">
-                     <h3>Dámské novinky</h3>
+                     <h2>Dámské novinky</h2>
                      <div ref={womenItemsNode} className="home__item-grid">
                          { !womenItemsLoading && womenItems.map((item)=>{
                              return (

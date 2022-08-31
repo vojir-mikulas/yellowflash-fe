@@ -8,6 +8,7 @@ import {cartActions} from "./redux/cart-slice";
 import Footer from "./components/Footer/Footer";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 import {AnimatePresence, motion} from "framer-motion"
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
     const cartItems = useSelector((state) => state.cart.itemList)
@@ -37,7 +38,7 @@ function App() {
     return (
         <Router className="App">
             <Header/>
-
+            <ScrollToTop/>
           <div className="routes">
             <AnimatedRoutes/>
           </div>

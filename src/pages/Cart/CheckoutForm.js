@@ -56,11 +56,11 @@ const CheckoutForm = () => {
                   initial={{opacity:0}}
                   animate={{opacity:1}}
                   exit={{opacity:0}}>
-          <span style={{textAlign:"center"}}> YELLOWFLASH.COM <span className="slash">/</span> NAKUPNÍ KOŠÍK</span>
-          <h1>NÁKUPNÍ KOŠÍK</h1>
+          <span style={{textAlign:"center"}}> YELLOWFLASH.COM <span className="slash">/</span> PLATBA</span>
+          <h1>PLATBA</h1>
           <div className={"cart-page__container"}>
 
-              <form ref={formNode} onSubmit={handleSubmit} style={{backgroundColor: "lightgray", padding: "50px"}}>
+              <form className={"checkout__form"} ref={formNode} onSubmit={handleSubmit} style={{backgroundColor: "lightgray"}}>
                   <PaymentElement/>
                   {/* Show error message to your customers */}
                   {errorMessage && <div>{errorMessage}</div>}

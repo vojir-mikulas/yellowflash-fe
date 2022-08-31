@@ -15,11 +15,14 @@ import OrderPage from "../pages/order";
 import PaymentStatus from "../pages/PaymentStatus";
 import ErrorPage from "../pages/ErrorPage";
 import {AnimatePresence} from "framer-motion"
+import ScrollToTop from "./ScrollToTop";
 
 const AnimatedRoutes = () => {
     const location = useLocation();
     return (
         <AnimatePresence>
+
+
             <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/:sex/:category" element={<Items/>}/>
@@ -40,6 +43,7 @@ const AnimatedRoutes = () => {
                 <Route path="/error" element={<ErrorPage/>}/>
                 <Route path="*" element={<ErrorPage/>}/>
             </Routes>
+
         </AnimatePresence>
     );
 };

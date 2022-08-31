@@ -505,7 +505,7 @@ footer .footer__socials {
 .home .home__item-grid::-webkit-scrollbar {
   display: none;
 }
-.home h3 {
+.home h2 {
   font-size: 3rem;
   margin-bottom: 2rem;
 }
@@ -828,12 +828,19 @@ footer .footer__socials {
   display: flex;
   gap: 3rem;
 }
+.cart-page .cart-page__form .input--default {
+  border: 1px solid pink !important;
+}
 .cart-page .cart-page__form .input--error {
   border: 1px solid indianred;
   color: indianred;
 }
 .cart-page .cart-page__form .input--correct {
   border: 1px solid limegreen;
+}
+
+.checkout__form {
+  padding: 4vw;
 }
 
 .cart {
