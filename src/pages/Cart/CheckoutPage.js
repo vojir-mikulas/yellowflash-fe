@@ -16,7 +16,7 @@ const CheckoutPage = () => {
     const discountCode = useSelector((state) => state.billingInfo.discount.name ? state.billingInfo.discount.name : null)
     const billingInformation = useSelector((state) => state.billingInfo.deliveryInformation)
     const [clientSecret, setClientSecret] = useState("")
-    console.log(clientSecret)
+
 
     useEffect(() => {
         axios.post(`${process.env.REACT_APP_SERVER_URL}/stripe/secret`, {
