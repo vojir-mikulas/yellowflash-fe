@@ -18,7 +18,7 @@ const InputText = (props) => {
             props.options.setError(false);
         }
     },[inputValue]);
-    console.log(props.options.regexString + props.options.name)
+
     useEffect(()=>{
         setInputValue(props.options.initialValue)
         props.options.setParentValue(props.options.initialValue)
